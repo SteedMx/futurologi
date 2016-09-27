@@ -27,7 +27,7 @@ defmodule FromSpace.Router do
 
     get "/admin/new", AuthController, :new
     post "/admin/register", AuthController, :register
-    
+
     get "/admin/login", AuthController, :auth
     post "/admin/login", AuthController, :login
     get "/admin/logout", AuthController, :logout
@@ -47,8 +47,9 @@ defmodule FromSpace.Router do
     get "/dashboard", DashboardController, :dashboard
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", FromSpace do
-  #   pipe_through :api
-  # end
+  scope "/api", FromSpace do
+    pipe_through :api
+
+    get "/posts", Api.PostController, :index
+  end
 end
