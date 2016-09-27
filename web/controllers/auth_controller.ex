@@ -5,7 +5,7 @@ defmodule FromSpace.AuthController do
   alias FromSpace.AuthService
 
   def new(conn, _params) do
-    changeset = Admin.changeset(%Admin{})
+    changeset = Admin.changeset(%Admin{}, %{})
     render conn, "new.html", changeset: changeset
   end
 
