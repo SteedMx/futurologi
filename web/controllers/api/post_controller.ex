@@ -5,6 +5,6 @@ defmodule FromSpace.Api.PostController do
 
   def index(conn, _) do
     posts = Post.published_by_creation
-    render(FromSpace.PostController, "posts.json", posts: posts)
+    render(conn, FromSpace.PostView, "posts.json", posts: posts)
   end
 end
