@@ -45,7 +45,7 @@
 
   <div class="form-group">
     <%= label f, :html, class: "control-label" %>
-    <%= text_input f, :html, class: "form-control" %>
+    <%= hidden_input f, :html, class: "form-control" %>
     <%= error_tag f, :html %>
   </div>
 
@@ -95,10 +95,10 @@
     theme: 'snow'
   });
 
+  var htmlField = document.querySelector('input[name="post\[html\]"]');
+  var editor = document.querySelector(".ql-editor");
   var form = document.querySelector('form');
-  form.addEventListener('submit', function (event) {
-    var htmlField = document.querySelector('input[name="post\[html\]"]');
-    var editor = document.querySelector(".ql-editor");
-    htmlField.value = editor.innerHTML;
-  });
+
+  if (htmlField.value) { quill.clipboard.dangerouslyPasteHTML(0, htmlField.value); }
+  form.addEventListener('submit', function (event) { htmlField.value = editor.innerHTML; });
 </script>
