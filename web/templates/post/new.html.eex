@@ -1,4 +1,4 @@
-<h2>Crear post</h2>
+<h2 id="post-form-title">Crear post</h2>
 
 <%= render "form.html", changeset: @changeset,
                         action: post_path(@conn, :create),

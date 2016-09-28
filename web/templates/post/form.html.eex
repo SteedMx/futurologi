@@ -9,7 +9,7 @@
 
   <div class="form-group">
     <%= label f, "Título", class: "control-label" %>
-    <%= text_input f, :title, class: "form-control" %>
+    <%= text_input f, :title, class: "form-control", required: true %>
     <%= error_tag f, :title %>
   </div>
 
@@ -17,15 +17,15 @@
     <%= label f, "Slug", class: "control-label" %>
     <p><span class="example">Ejemplo:</span> top-albumes-de-synthpop</p>
     <p>No incluyas acentos ni símbolos raros. Esta será la URL única del post dentro del blog.</p>
-    <%= text_input f, :url, class: "form-control" %>
+    <%= text_input f, :url, class: "form-control", required: true %>
     <%= error_tag f, :url %>
   </div>
 
   <div class="form-group">
     <%= label f, "Imagen de vista previa", class: "control-label" %>
     <p>La vista previa del post se muestra en la landing page de la plataforma.
-    Es la imagen principal del post.</p>
-    <%= text_input f, :preview_image, class: "form-control", type: "url" %>
+    Es la imagen principal del post. Debe ser una url a una imagen.</p>
+    <%= text_input f, :preview_image, class: "form-control", type: "url", required: true %>
     <%= error_tag f, :preview_image %>
   </div>
 
@@ -33,7 +33,7 @@
     <%= label f, "Texto de la vista previa", class: "control-label" %>
     <p>La vista previa del post se muestra en la landing page de la plataforma.
     Es el texto que describe de manera corta el contenido del post.</p>
-    <%= text_input f, :preview_text, class: "form-control", maxlength: "120" %>
+    <%= text_input f, :preview_text, class: "form-control", maxlength: "120", required: true %>
     <%= error_tag f, :preview_text %>
   </div>
 
@@ -50,7 +50,7 @@
   <div class="form-group">
     <%= label f, "Tags", class: "control-label" %>
     <p><span class="example">Ejemplo:</span> electronic, albums, 2016</p>
-    <%= text_input f, :virtual_tags, class: "form-control", value: @virtual_tags %>
+    <%= text_input f, :virtual_tags, class: "form-control", value: @virtual_tags, required: true %>
     <%= error_tag f, :virtual_tags %>
   </div>
 
@@ -58,14 +58,14 @@
     <%= label f, "Publicar", class: "control-label" %>
     <p>Publica el post en el blog.
     Si está desactivado, el post sólo sale como borrador en el dashboard.</p>
-    <%= checkbox f, :published, class: "form-control" %>
+    <%= checkbox f, :published %>
     <%= error_tag f, :published %>
   </div>
 
    <%= hidden_input f, :admin_id, value: Plug.Conn.get_session(@conn, :admin) %>
 
   <div class="form-group">
-    <%= submit "Guardar post", class: "btn btn-primary" %>
+    <%= submit "Guardar post", class: "btn btn-primary", id: "post-submit" %>
   </div>
 <% end %>
 

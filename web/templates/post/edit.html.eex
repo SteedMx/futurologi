@@ -1,4 +1,4 @@
-<h2>Editar post</h2>
+<h2 id="post-form-title">Editar post</h2>
 
 <%= render "form.html", changeset: @changeset,
                         action: post_path(@conn, :update, @post),
