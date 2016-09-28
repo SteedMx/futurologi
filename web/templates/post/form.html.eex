@@ -32,18 +32,6 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :preview_background_color, class: "control-label" %>
-    <%= text_input f, :preview_background_color, class: "form-control", type: "color" %>
-    <%= error_tag f, :preview_background_color %>
-  </div>
-
-  <div class="form-group">
-    <%= label f, :preview_font_color, class: "control-label" %>
-    <%= text_input f, :preview_font_color, class: "form-control", type: "color" %>
-    <%= error_tag f, :preview_font_color %>
-  </div>
-
-  <div class="form-group">
     <%= label f, :html, class: "control-label" %>
     <%= hidden_input f, :html, class: "form-control" %>
     <%= error_tag f, :html %>

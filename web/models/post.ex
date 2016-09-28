@@ -9,8 +9,8 @@ defmodule FromSpace.Post do
     field :url, :string
     field :preview_image, :string
     field :preview_text, :string
-    field :preview_background_color, :string
-    field :preview_font_color, :string
+    field :preview_background_color, :string, default: "#000"
+    field :preview_font_color, :string, default: "#fff"
     field :html, :string
     field :published, :boolean, default: false
     field :tags, {:array, :string}, default: []

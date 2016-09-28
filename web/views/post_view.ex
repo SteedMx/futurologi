@@ -2,6 +2,8 @@ defmodule FromSpace.PostView do
   use FromSpace.Web, :view
   alias FromSpace.AuthService
 
+  def render("no-post.json", _), do: %{error: "No posts match the given url"}
+  
   def render("posts.json", %{posts: posts}) do
     %{posts: render_many(posts, FromSpace.PostView, "post.json")}
   end
