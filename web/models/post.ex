@@ -46,7 +46,7 @@ defmodule FromSpace.Post do
      select: p,
      where: p.published == true,
      order_by: [desc: p.inserted_at],
-     limit: 20
+     limit: 5
     Repo.all(posts)
   end
 
@@ -55,7 +55,7 @@ defmodule FromSpace.Post do
       select: p,
       where: p.published == true and ^tag in p.tags,
       order_by: [desc: p.inserted_at],
-      limit: 20
+      limit: 5
     Repo.all(posts)
   end
 end
