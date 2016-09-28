@@ -47,9 +47,10 @@ defmodule FromSpace.Router do
     get "/dashboard", DashboardController, :dashboard
   end
 
-  scope "/api", FromSpace do
+  scope "/api", FromSpace.Api do
     pipe_through :api
 
-    get "/posts", Api.PostController, :index
+    get "/posts", PostController, :index
+    get "/posts/:url", PostController, :show
   end
 end
