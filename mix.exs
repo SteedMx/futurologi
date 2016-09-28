@@ -19,7 +19,7 @@ defmodule FromSpace.Mixfile do
   def application do
     [mod: {FromSpace, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :corsica]]
   end
 
   # Specifies which paths to compile per environment.
@@ -37,7 +37,8 @@ defmodule FromSpace.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:cowboy, "~> 1.0"},
-     {:comeonin, "~> 2.1.1"}]
+     {:comeonin, "~> 2.1.1"},
+     {:corsica, "~> 0.5"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

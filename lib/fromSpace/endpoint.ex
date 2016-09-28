@@ -35,5 +35,6 @@ defmodule FromSpace.Endpoint do
     key: "_fromSpace_key",
     signing_salt: "xjvd6Yvq"
 
+  plug Corsica, origins: "*"
   plug FromSpace.Router
 end
