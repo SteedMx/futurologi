@@ -36,8 +36,8 @@
         <%= link "Preview", to: "/admin/preview/#{post.id}", class: "btn btn-default btn-xs" %>
       <% end %>
 
-    <%= link "Edit", to: "/admin/editor/#{post.id}", class: "btn btn-default btn-xs" %>
-    <%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+    <%= link "✏️", to: "/admin/editor/#{post.id}", class: "btn btn-default btn-xs" %>
+    <%= link "❌", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
 
    <% end %>
   </div>

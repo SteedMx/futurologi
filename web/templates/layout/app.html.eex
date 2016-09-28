@@ -20,9 +20,9 @@
           </ul>
           <ul class="nav nav-pills pull-right">
             <%= if AuthService.logged_in?(@conn) do %>
-              <li><a href="/admin/dashboard">DASHBOARD</a></li>
-              <li><a href="/admin/editor">NEW POST</a></li>
-              <li><a href="/admin/logout">LOG OUT</a></li>
+              <li><a href="/admin/dashboard">POSTS</a></li>
+              <li><a href="/admin/editor">NUEVO POST</a></li>
+              <li><a href="/admin/logout">CERRAR SESION</a></li>
             <% end %>
           </ul>
         </nav>

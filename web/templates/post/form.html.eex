@@ -8,46 +8,56 @@
   <% end %>
 
   <div class="form-group">
-    <%= label f, :title, class: "control-label" %>
+    <%= label f, "Título", class: "control-label" %>
     <%= text_input f, :title, class: "form-control" %>
     <%= error_tag f, :title %>
   </div>
 
   <div class="form-group">
-    <%= label f, :url, class: "control-label" %>
+    <%= label f, "Slug", class: "control-label" %>
+    <p><span class="example">Ejemplo:</span> top-albumes-de-synthpop</p>
+    <p>No incluyas acentos ni símbolos raros. Esta será la URL única del post dentro del blog.</p>
     <%= text_input f, :url, class: "form-control" %>
     <%= error_tag f, :url %>
   </div>
 
   <div class="form-group">
-    <%= label f, :preview_image, class: "control-label" %>
+    <%= label f, "Imagen de vista previa", class: "control-label" %>
+    <p>La vista previa del post se muestra en la landing page de la plataforma.
+    Es la imagen principal del post.</p>
     <%= text_input f, :preview_image, class: "form-control", type: "url" %>
     <%= error_tag f, :preview_image %>
   </div>
 
   <div class="form-group">
-    <%= label f, :preview_text, class: "control-label" %>
+    <%= label f, "Texto de la vista previa", class: "control-label" %>
+    <p>La vista previa del post se muestra en la landing page de la plataforma.
+    Es el texto que describe de manera corta el contenido del post.</p>
     <%= text_input f, :preview_text, class: "form-control", maxlength: "120" %>
     <%= error_tag f, :preview_text %>
   </div>
 
   <div class="form-group">
-    <%= label f, :html, class: "control-label" %>
     <%= hidden_input f, :html, class: "form-control" %>
     <%= error_tag f, :html %>
   </div>
 
+  <%= label f, "Contenido", class: "control-label" %>
   <div id="editor">
   </div>
 
+  <br>
   <div class="form-group">
-    <%= label f, :virtual_tags, class: "control-label" %>
+    <%= label f, "Tags", class: "control-label" %>
+    <p><span class="example">Ejemplo:</span> electronic, albums, 2016</p>
     <%= text_input f, :virtual_tags, class: "form-control", value: @virtual_tags %>
     <%= error_tag f, :virtual_tags %>
   </div>
 
   <div class="form-group">
-    <%= label f, :published, class: "control-label" %>
+    <%= label f, "Publicar", class: "control-label" %>
+    <p>Publica el post en el blog.
+    Si está desactivado, el post sólo sale como borrador en el dashboard.</p>
     <%= checkbox f, :published, class: "form-control" %>
     <%= error_tag f, :published %>
   </div>
@@ -55,7 +65,7 @@
    <%= hidden_input f, :admin_id, value: Plug.Conn.get_session(@conn, :admin) %>
 
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= submit "Guardar post", class: "btn btn-primary" %>
   </div>
 <% end %>
 
