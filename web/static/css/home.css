@@ -83,3 +83,33 @@
   border-radius:7%;
   margin:0.2vw;
 }
+
+.post .post-action-button {
+  display:inline-block;
+  margin:2em;
+  margin-top:1em;
+}
+
+#posts-link {
+  font-weight:600;
+  letter-spacing: 0.2em;
+  color:black;
+}
+
+#create-post {
+  letter-spacing: 0.2em;
+  color:#ccc;
+  background-color:black;
+  padding:0.2em;
+  padding-left:1em;
+  padding-right:1em;
+  margin-top:0.5em;
+}
+
+#log-out {
+  font-size:0.8em;
+  margin-top:0.3em;
+  margin-left:2em;
+  letter-spacing:0.2em;
+  color:gray;
+}

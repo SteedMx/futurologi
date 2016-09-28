@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title><%= random_emoji %> Music Hunter :: BLOG</title>
+    <title>🎶 Music Hunter :: BLOG</title>
 
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" >
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
@@ -16,13 +16,13 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-left">
-            <li><a href="/" class="logo"><%= random_emoji %></a></li>
+            <li><a href="/" class="logo">🎶</a></li>
           </ul>
           <ul class="nav nav-pills pull-right">
             <%= if AuthService.logged_in?(@conn) do %>
-              <li><a href="/admin/dashboard">POSTS</a></li>
-              <li><a href="/admin/editor">NUEVO POST</a></li>
-              <li><a href="/admin/logout">CERRAR SESION</a></li>
+              <li><a href="/admin/dashboard" id="posts-link">POSTS</a></li>
+              <li><a href="/admin/editor" id="create-post">NUEVO POST</a></li>
+              <li><a href="/admin/logout" id="log-out">CERRAR SESION</a></li>
             <% end %>
           </ul>
         </nav>
