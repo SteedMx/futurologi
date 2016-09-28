@@ -130,6 +130,9 @@
 
 form {
   text-align:center;
+  max-width:70vw;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 label {
