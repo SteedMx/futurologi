@@ -23,6 +23,8 @@
               <li><a href="/admin/dashboard" id="posts-link">POSTS</a></li>
               <li><a href="/admin/editor" id="create-post">NUEVO POST</a></li>
               <li><a href="/admin/logout" id="log-out">CERRAR SESION</a></li>
+            <% else %>
+              <li><a href="/admin/login" id="log-out">INICIAR SESION</a></li>
             <% end %>
           </ul>
         </nav>

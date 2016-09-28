@@ -3,6 +3,6 @@
   <label>Password</label>
   <%= password_input f, :password, required: true %>
 
-  <%= submit "Login"%>
+  <%= submit "Login", id: "post-submit", style: "color:white;"%>
 
 <% end %>
