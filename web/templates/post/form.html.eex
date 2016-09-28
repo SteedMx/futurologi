@@ -45,7 +45,7 @@
 
   <div class="form-group">
     <%= label f, :html, class: "control-label" %>
-    <%= textarea f, :html, class: "form-control" %>
+    <%= text_input f, :html, class: "form-control" %>
     <%= error_tag f, :html %>
   </div>
 
@@ -75,6 +75,30 @@
 
 <script type="text/javascript">
   var quill = new Quill('#editor', {
+    modules: {
+      toolbar: [
+        ['bold', 'italic', 'underline', 'strike'],
+        ['image', 'link', 'blockquote'],
+        [
+          {'size': ['small', false, 'large']},
+          {'header': [1, 2, 3, false]},
+          {'font': []},
+          {'align': []}
+        ],
+        [
+          {'color':[]},
+          {'background':[]}
+        ],
+        ['clean']
+      ]
+    },
     theme: 'snow'
+  });
+
+  var form = document.querySelector('form');
+  form.addEventListener('submit', function (event) {
+    var htmlField = document.querySelector('input[name="post\[html\]"]');
+    var editor = document.querySelector(".ql-editor");
+    htmlField.value = editor.innerHTML;
   });
 </script>
